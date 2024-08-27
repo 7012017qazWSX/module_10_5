@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     # Многопроцессный вызов
     start_time = time.perf_counter()
-    with Pool() as pool:
+    with Pool(processes = 4) as pool:
         pool.map(read_info, filenames)
     end_time = time.perf_counter()
     print(f"Многопроцессный: {end_time - start_time} секунд")
